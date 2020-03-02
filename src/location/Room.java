@@ -1,4 +1,4 @@
-package rooms;
+package location;
 import enums.RoomType;
 import enums.BedType;
 import enums.Accessibility;
@@ -11,6 +11,7 @@ public class Room {
 	private BedType bedType;
 	private Accessibility accessibility; 
 	private Availability availability; 
+	private String roomNumber;
 	private double price;
 	
 }
