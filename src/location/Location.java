@@ -12,6 +12,7 @@ public class Location{
 		this.city = city;
 		this.address = address;
 		this.name = name;
+		this.rooms = new HashMap<>(); 
 	}
 	
 	public States getStateAbbrev() {
@@ -33,7 +34,6 @@ public class Location{
 	public void addRoom(Room room) {
 		rooms.put(room.getRoomNumber(), room);
 	}
-	
 
 	private HashMap<String, Room> rooms;
 	private States stateAbbrev;
