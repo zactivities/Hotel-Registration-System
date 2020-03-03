@@ -1,16 +1,13 @@
 package location;
 import enums.RoomType;
-import enums.States;
 import enums.BedType;
 import enums.Accessibility;
 import enums.Availability;
 
-public class Room extends Location{
+public class Room{
 
-	public Room(States stateAbbrev, String city, String address, String name,
-			RoomType roomType, BedType bedType, Accessibility accessibility,
+	public Room(RoomType roomType, BedType bedType, Accessibility accessibility,
 			Availability availability, String roomNumber, double price) {
-		super(stateAbbrev, city, address, name);
 		this.roomType = roomType;
 		this.bedType = bedType;
 		this.accessibility = accessibility;

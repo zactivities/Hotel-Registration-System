@@ -1,4 +1,7 @@
 package location;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import enums.States;
 
 
@@ -27,7 +30,13 @@ public class Location{
 	public String getName() {
 		return name;
 	}
+	
+	public void addRoom(Room room) {
+		rooms.put(room.getRoomNumber(), room);
+	}
+	
 
+	private HashMap<String, Room> rooms;
 	private States stateAbbrev;
 	private String city;
 	private String address;
