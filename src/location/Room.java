@@ -19,24 +19,31 @@ public class Room{
 	public Availability getAvailability() {
 		return availability;
 	}
+	
 	public void setAvailability(Availability availability) {
 		this.availability = availability;
 	}
+	
 	public double getPrice() {
 		return price;
 	}
+	
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
 	public RoomType getRoomType() {
 		return roomType;
 	}
+	
 	public BedType getBedType() {
 		return bedType;
 	}
+	
 	public Accessibility getAccessibility() {
 		return accessibility;
 	}
+	
 	public String getRoomNumber() {
 		return roomNumber;
 	}
@@ -47,5 +54,4 @@ public class Room{
 	private Availability availability; 
 	private String roomNumber;
 	private double price;
-	
 }
