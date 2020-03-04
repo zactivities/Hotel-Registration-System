@@ -19,14 +19,17 @@ public class HotelRegistration {
 		generateRooms();
 	}
 	
-	
+	//TODO Figure out what to do for customer check in/
+	public void customerCheckIn(String firstName, String lastName, 
+			String phoneNumber, RoomType roomPreference) {
+		
+	}
 	
 	public ArrayList<Location> getLocations() {
 		return locations;
 	}
 	
 	private void generateRooms() {
-
 		for (int firstFloor = 0; firstFloor < 30; firstFloor++) {
 			locations.get(index++)
 					.addRoom(new Room(RoomType.HANDICAPACCESSIBLE, BedType.KING,
