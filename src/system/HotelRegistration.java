@@ -14,7 +14,6 @@ public class HotelRegistration{
 	public HotelRegistration() {
 		this.customers = new HashMap<>();
 		this.locations = new HashMap<>();
-
 	}
 	
 	public void addLocations(States state, String city, String address, 
