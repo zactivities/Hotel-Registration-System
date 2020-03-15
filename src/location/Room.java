@@ -7,7 +7,7 @@ import enums.Availability;
 public class Room{
 
 	public Room(RoomType roomType, BedType bedType, Accessibility accessibility,
-			Availability availability, String roomNumber, double price, 
+			boolean availability, String roomNumber, double price, 
 			int capacity) {
 		this.roomType = roomType;
 		this.bedType = bedType;
@@ -18,11 +18,11 @@ public class Room{
 		this.capacity = capacity;
 	}
 	
-	public Availability getAvailability() {
+	public boolean isAvailable() {
 		return availability;
 	}
 	
-	public void setAvailability(Availability availability) {
+	public void setAvailability(boolean availability) {
 		this.availability = availability;
 	}
 	
@@ -54,10 +54,18 @@ public class Room{
 		return roomNumber;
 	}
 
+	@Override
+	public String toString() {
+		return "Room [roomType=" + roomType + ", bedType=" + bedType
+				+ ", accessibility=" + accessibility + ", availability="
+				+ availability + ", roomNumber=" + roomNumber + ", price="
+				+ price + ", capacity=" + capacity + "]";
+	}
+	
 	private RoomType roomType;
 	private BedType bedType;
 	private Accessibility accessibility; 
-	private Availability availability; 
+	private boolean availability; 
 	private String roomNumber;
 	private double price;
 	private int capacity;
