@@ -7,12 +7,13 @@ import enums.Availability;
 import enums.BedType;
 import enums.RoomType;
 import enums.States;
+import enums.LocationName;
 
 
 public class Location{
 
 	public Location(States stateAbbrev, String city, String address,
-			String name) {
+			LocationName name) {
 		this.stateAbbrev = stateAbbrev;
 		this.city = city;
 		this.address = address;
@@ -33,7 +34,7 @@ public class Location{
 		return address;
 	}
 
-	public String getName() {
+	public LocationName getName() {
 		return name;
 	}
 	
@@ -83,8 +84,8 @@ public class Location{
 
 	private ArrayList<Room> rooms;
 	private States stateAbbrev;
+	private LocationName name;
 	private String city;
 	private String address;
-	private String name;
 
 }

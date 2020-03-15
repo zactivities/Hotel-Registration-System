@@ -6,7 +6,7 @@ import location.Location;
 import location.Room;
 import customer.Customer;
 import enums.States;
-import enums.Accessibility;
+import enums.LocationName;
 import enums.RoomType;
 
 public class HotelRegistration{
@@ -14,18 +14,16 @@ public class HotelRegistration{
 	public HotelRegistration() {
 		this.customers = new HashMap<>();
 		this.locations = new HashMap<>();
-		addLocations(States.WA, "Seattle", "4266 Winslow Pl N", 
-				"Bax Grand Plaza");
-		addLocations(States.OR, "Portland", "696 Boren Ave SE", 
-				"Bax Grand Plaze II");
+
 	}
 	
-	private void addLocations(States state, String city, String address, 
-			String name) {
-		locations.put(name, new Location(state, city, address, name));
+	public void addLocations(States state, String city, String address, 
+			LocationName locationName) {
+		locations.put(locationName, new Location(state, city, address, 
+				locationName));
 	}
 	
-	public String getAvailableRooms(String locationName) {
+	public String getAvailableRooms(LocationName locationName) {
 		ArrayList<Room> available = new ArrayList<>();
 		
 		for(int i = 0; i < locations.get(locationName).getRooms().size(); i++) {
@@ -36,7 +34,7 @@ public class HotelRegistration{
 		return available.toString();
 	}
 	
-	public String getBookedRooms(String locationName) {
+	public String getBookedRooms(LocationName locationName) {
 		ArrayList<Room> booked = new ArrayList<>();
 		
 		for(int i = 0; i < locations.get(locationName).getRooms().size(); i++) {
@@ -48,7 +46,7 @@ public class HotelRegistration{
 	}
 	
 	
-	public String getAllRooms(String locationName) {
+	public String getAllRooms(LocationName locationName) {
 		return locations.get(locationName).getRooms().toString();
 	}
 	
@@ -68,11 +66,11 @@ public class HotelRegistration{
 		return customers.get(lastName+phoneNumber);
 	}
 	
-	public HashMap<String, Location> getLocations() {
+	public HashMap<LocationName, Location> getLocations() {
 		return locations; 
 	}
 
 	private HashMap<String, Customer> customers;
-	private HashMap<String, Location> locations;
+	private HashMap<LocationName, Location> locations;
 	
 }
