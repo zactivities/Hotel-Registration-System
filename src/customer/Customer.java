@@ -1,7 +1,7 @@
 package customer;
 import enums.RoomType;
 
-public class Customer {
+public class Customer{
 
 	
 	public Customer(String firstName, String lastName, String phoneNumber,

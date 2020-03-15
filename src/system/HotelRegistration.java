@@ -7,7 +7,7 @@ import enums.States;
 import enums.Accessibility;
 import enums.RoomType;
 
-public class HotelRegistration {
+public class HotelRegistration{
 	
 	public HotelRegistration() {
 		this.customers = new HashMap<>();
