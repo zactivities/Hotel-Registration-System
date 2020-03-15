@@ -44,7 +44,6 @@ public class HotelRegistration{
 		return booked.toString();
 	}
 	
-	
 	public String getAllRooms(LocationName locationName) {
 		return locations.get(locationName).getRooms().toString();
 	}
@@ -71,5 +70,6 @@ public class HotelRegistration{
 
 	private HashMap<String, Customer> customers;
 	private HashMap<LocationName, Location> locations;
+	
 	
 }
