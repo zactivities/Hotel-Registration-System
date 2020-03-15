@@ -29,14 +29,14 @@ public class HotelRegistration {
 	
 	public void createNewCustomer(String firstName, String lastName, 
 			String phoneNumber, RoomType roomPreference) {
-		customers.put(lastName+phoneNumber, new Customer(firstName, lastName, 
-				phoneNumber, roomPreference));
+		customers.put(lastName.trim().toLowerCase()+phoneNumber.trim(), 
+				new Customer(firstName, lastName, phoneNumber, roomPreference));
 	}
 	
 	public void createNewCustomer(String firstName, String lastName, 
 			String phoneNumber) {
-		customers.put(lastName+phoneNumber, new Customer(firstName, lastName, 
-				phoneNumber));
+		customers.put(lastName.trim().toLowerCase()+phoneNumber.trim(), 
+				new Customer(firstName, lastName, phoneNumber));
 	}
 	
 	public Customer getCustomer(String lastName, String phoneNumber) {
@@ -47,6 +47,7 @@ public class HotelRegistration {
 		return locations; 
 	}
 
-	private HashMap<String, Customer>customers;
+	private HashMap<String, Customer> customers;
 	private HashMap<String, Location> locations;
+	
 }
