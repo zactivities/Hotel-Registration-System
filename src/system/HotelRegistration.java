@@ -1,7 +1,9 @@
 package system;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import location.Location;
+import location.Room;
 import customer.Customer;
 import enums.States;
 import enums.Accessibility;
@@ -24,6 +26,29 @@ public class HotelRegistration{
 	}
 	
 	public String getAvailableRooms(String locationName) {
+		ArrayList<Room> available = new ArrayList<>();
+		
+		for(int i = 0; i < locations.get(locationName).getRooms().size(); i++) {
+			if(locations.get(locationName).getRooms().get(i).isAvailable()) {
+				available.add(locations.get(locationName).getRooms().get(i));
+			}
+		}
+		return available.toString();
+	}
+	
+	public String getBookedRooms(String locationName) {
+		ArrayList<Room> booked = new ArrayList<>();
+		
+		for(int i = 0; i < locations.get(locationName).getRooms().size(); i++) {
+			if(!locations.get(locationName).getRooms().get(i).isAvailable()) {
+				booked.add(locations.get(locationName).getRooms().get(i));
+			}
+		}
+		return booked.toString();
+	}
+	
+	
+	public String getAllRooms(String locationName) {
 		return locations.get(locationName).getRooms().toString();
 	}
 	
@@ -43,7 +68,7 @@ public class HotelRegistration{
 		return customers.get(lastName+phoneNumber);
 	}
 	
-	public HashMap<String,Location> getLocations() {
+	public HashMap<String, Location> getLocations() {
 		return locations; 
 	}
 

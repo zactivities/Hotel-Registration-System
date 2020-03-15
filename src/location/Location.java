@@ -60,21 +60,21 @@ public class Location{
 					roomNumber = i + "0-" + j; 
 					rooms.add(new Room(RoomType.STANDARDTWOQUEEN, BedType.KING,
 							Accessibility.HANDICAPACCESSIBLE,
-							Availability.AVAILABLE, roomNumber, lowPrice, 
+							true, roomNumber, lowPrice, 
 							regCapacity));
 				}
 				else if(j < 21) {
 					roomNumber = i + "0-" + j; 
 					rooms.add(new Room(RoomType.DELUXETWOQUEEN, BedType.QUEEN, 
 							Accessibility.HANDICAPACCESSIBLE,
-							Availability.AVAILABLE, roomNumber, midPrice, 
+							true, roomNumber, midPrice, 
 							regCapacity));
 				}
 				else {
 					roomNumber = i + "0-" + j; 
 					rooms.add(new Room(RoomType.DELUXESUITE,
 							BedType.KING, Accessibility.NONACCESSIBLE,
-							Availability.AVAILABLE, roomNumber, highPrice, 
+							true, roomNumber, highPrice, 
 							largeCapacity));
 				}
 			}
