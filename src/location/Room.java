@@ -7,13 +7,15 @@ import enums.Availability;
 public class Room{
 
 	public Room(RoomType roomType, BedType bedType, Accessibility accessibility,
-			Availability availability, String roomNumber, double price) {
+			Availability availability, String roomNumber, double price, 
+			int capacity) {
 		this.roomType = roomType;
 		this.bedType = bedType;
 		this.accessibility = accessibility;
 		this.availability = availability;
 		this.roomNumber = roomNumber;
 		this.price = price;
+		this.capacity = capacity;
 	}
 	
 	public Availability getAvailability() {
@@ -26,6 +28,10 @@ public class Room{
 	
 	public double getPrice() {
 		return price;
+	}
+	
+	public int getCapacity() {
+		return capacity;
 	}
 	
 	public void setPrice(double price) {
@@ -54,5 +60,5 @@ public class Room{
 	private Availability availability; 
 	private String roomNumber;
 	private double price;
-	
+	private int capacity;
 }
