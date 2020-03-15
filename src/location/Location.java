@@ -51,6 +51,8 @@ public class Location{
 		double lowPrice = 110.99;
 		double midPrice = 120.99;
 		double highPrice = 160.99;
+		int regCapacity = 4;
+		int largeCapacity = 8;
 		
 		for(int i = 0; i < floors; i++) {
 			for(int j = 0; j < 30; i++) {
@@ -58,19 +60,22 @@ public class Location{
 					roomNumber = i + "0-" + j; 
 					rooms.add(new Room(RoomType.STANDARDTWOQUEEN, BedType.KING,
 							Accessibility.HANDICAPACCESSIBLE,
-							Availability.AVAILABLE, roomNumber, lowPrice));
+							Availability.AVAILABLE, roomNumber, lowPrice, 
+							regCapacity));
 				}
 				else if(j < 21) {
 					roomNumber = i + "0-" + j; 
 					rooms.add(new Room(RoomType.DELUXETWOQUEEN, BedType.QUEEN, 
 							Accessibility.HANDICAPACCESSIBLE,
-							Availability.AVAILABLE, roomNumber, midPrice));
+							Availability.AVAILABLE, roomNumber, midPrice, 
+							regCapacity));
 				}
 				else {
 					roomNumber = i + "0-" + j; 
 					rooms.add(new Room(RoomType.DELUXESUITE,
 							BedType.KING, Accessibility.NONACCESSIBLE,
-							Availability.AVAILABLE, roomNumber, highPrice));
+							Availability.AVAILABLE, roomNumber, highPrice, 
+							largeCapacity));
 				}
 			}
 		}

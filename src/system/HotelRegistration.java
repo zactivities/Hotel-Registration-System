@@ -27,6 +27,18 @@ public class HotelRegistration {
 		return locations.get(locationName).getRooms().toString();
 	}
 	
+	public void createNewCustomer(String firstName, String lastName, 
+			String phoneNumber, RoomType roomPreference) {
+		customers.put(lastName+phoneNumber, new Customer(firstName, lastName, 
+				phoneNumber, roomPreference));
+	}
+	
+	public void createNewCustomer(String firstName, String lastName, 
+			String phoneNumber) {
+		customers.put(lastName+phoneNumber, new Customer(firstName, lastName, 
+				phoneNumber));
+	}
+	
 	public Customer getCustomer(String lastName, String phoneNumber) {
 		return customers.get(lastName+phoneNumber);
 	}
