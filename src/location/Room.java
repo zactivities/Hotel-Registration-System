@@ -54,4 +54,5 @@ public class Room{
 	private Availability availability; 
 	private String roomNumber;
 	private double price;
+	
 }
