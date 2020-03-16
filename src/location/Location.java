@@ -51,26 +51,27 @@ public class Location{
 		double midPrice = 120.99;
 		double highPrice = 160.99;
 		int regCapacity = 4;
+		int medCapacity = 6;
 		int largeCapacity = 8;
 		
 		for(int i = 0; i < floors; i++) {
 			for(int j = 0; j < 30; j++) {
-				if(j < 11) {
-					roomNumber = i + "0-" + j; 
-					rooms.add(new Room(RoomType.STANDARDTWOQUEEN, BedType.KING,
+				if(j < 10) {
+					roomNumber = (i+1) + "0" + (j); 
+					rooms.add(new Room(RoomType.STANDARDONEKING, BedType.KING,
 							Accessibility.HANDICAPACCESSIBLE,
 							true, roomNumber, lowPrice, 
 							regCapacity));
 				}
-				else if(j < 21) {
-					roomNumber = i + "0-" + j; 
+				else if((j > 9) && (j < 20)) {
+					roomNumber = (i+1) + "" + (j); 
 					rooms.add(new Room(RoomType.DELUXETWOQUEEN, BedType.QUEEN, 
 							Accessibility.HANDICAPACCESSIBLE,
 							true, roomNumber, midPrice, 
-							regCapacity));
+							medCapacity));
 				}
 				else {
-					roomNumber = i + "0-" + j; 
+					roomNumber = (i+1) + "" + (j); 
 					rooms.add(new Room(RoomType.DELUXESUITE,
 							BedType.KING, Accessibility.NONACCESSIBLE,
 							true, roomNumber, highPrice, 
@@ -85,5 +86,4 @@ public class Location{
 	private LocationName name;
 	private String city;
 	private String address;
-
 }

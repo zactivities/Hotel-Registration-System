@@ -70,6 +70,4 @@ public class HotelRegistration{
 
 	private HashMap<String, Customer> customers;
 	private HashMap<LocationName, Location> locations;
-	
-	
 }
